@@ -1,10 +1,10 @@
-## Interface: 80300
+## Interface: 90001
 ## Title: Titan Panel [|cffd6266cFarm Friend|r]
 ## Notes: Adds the functionality to Track an Farmed Item in the Titan Panel Bar.
 ## Author: BloddDragon2580
 ## SavedVariables: TitanFarmFriendDB
 ## Dependencies: Titan
-## Version: 3.0
+## Version: 4.0
 ## X-Child-Of: Titan
 
 embeds.xml
