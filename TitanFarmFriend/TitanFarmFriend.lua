@@ -4,7 +4,7 @@ local L = LibStub('AceLocale-3.0'):GetLocale('Titan', true);
 local TitanFarmFriend = LibStub('AceAddon-3.0'):NewAddon(TITAN_FARM_Friend_ID, 'AceConsole-3.0', 'AceHook-3.0', 'AceTimer-3.0', 'AceEvent-3.0');
 local ADDON_VERSION = GetAddOnMetadata('TitanFarmFriend', 'Version');
 local OPTION_ORDER = {};
-local ITEMS_AVAILABLE = 9;
+local ITEMS_AVAILABLE = 12;
 local ITEM_DISPLAY_STYLES = {};
 local NOTIFICATION_QUEUE = {};
 local NOTIFICATION_TRIGGERED = {};
@@ -100,6 +100,9 @@ function TitanFarmFriend_OnLoad(self)
 			Item7 = '',
 			Item8 = '',
 			Item9 = '',
+			Item10 = '',
+			Item11 = '',
+			Item12 = '',
 			ItemQuantity1 = 0,
 			ItemQuantity2 = 0,
 			ItemQuantity3 = 0,
@@ -109,6 +112,9 @@ function TitanFarmFriend_OnLoad(self)
 			ItemQuantity7 = 0,
 			ItemQuantity8 = 0,
 			ItemQuantity9 = 0,
+			ItemQuantity10 = 0,
+			ItemQuantity11 = 0,
+			ItemQuantity12 = 0,
       ItemShowInBarIndex = 1,
       ItemDisplayStyle = 2,
 			GoalNotification = true,
@@ -489,6 +495,33 @@ function TitanFarmFriend:GetConfigOption()
           items_track_count_9 = TitanFarmFriend:GetTrackedItemQuantityField(9),
           items_track_show_bar_9 = TitanFarmFriend:GetTrackedItemShowBarField(9),
           items_clear_button_9 = TitanFarmFriend:GetTrackedItemClearButton(9),
+		  items_space_10 = {
+            type = 'description',
+            name = '',
+            order = TitanFarmFriend:GetOptionOrder('items'),
+          },
+          items_track_10 = TitanFarmFriend:GetTrackedItemField(10),
+          items_track_count_10 = TitanFarmFriend:GetTrackedItemQuantityField(10),
+          items_track_show_bar_10 = TitanFarmFriend:GetTrackedItemShowBarField(10),
+          items_clear_button_10 = TitanFarmFriend:GetTrackedItemClearButton(10),
+		  items_space_11 = {
+            type = 'description',
+            name = '',
+            order = TitanFarmFriend:GetOptionOrder('items'),
+          },
+          items_track_11 = TitanFarmFriend:GetTrackedItemField(11),
+          items_track_count_11 = TitanFarmFriend:GetTrackedItemQuantityField(11),
+          items_track_show_bar_11 = TitanFarmFriend:GetTrackedItemShowBarField(11),
+          items_clear_button_11 = TitanFarmFriend:GetTrackedItemClearButton(11),
+		  items_space_12 = {
+            type = 'description',
+            name = '',
+            order = TitanFarmFriend:GetOptionOrder('items'),
+          },
+          items_track_12 = TitanFarmFriend:GetTrackedItemField(12),
+          items_track_count_12 = TitanFarmFriend:GetTrackedItemQuantityField(12),
+          items_track_show_bar_12 = TitanFarmFriend:GetTrackedItemShowBarField(12),
+          items_clear_button_12 = TitanFarmFriend:GetTrackedItemClearButton(12),
         },
       },
       tab_notifications = {
