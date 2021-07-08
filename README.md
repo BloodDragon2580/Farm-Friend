@@ -44,3 +44,6 @@ Chat Commands
     /ff reset <all | items> - Resets Farm Buddy to it's default settings.
     /ff version - Show the current used Farm Buddy Version.
     /ff help - Shows the available chat commands.
+
+
+Download Count https://hanadigital.github.io/grev/?user=BloodDragon2580&repo=Farm-Friend
