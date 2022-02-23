@@ -78,7 +78,7 @@ function TitanFarmFriend_OnLoad(self)
 		tooltipTitle = ADDON_NAME,
 		tooltipTextFunction = 'TitanFarmFriend_GetTooltipText',
 		icon = 'Interface\\AddOns\\TitanFarmFriend\\TitanFarmFriend',
-		iconWidth = 0,
+      iconWidth = 16,
 		controlVariables = {
 			ShowIcon = true,
 			ShowLabelText = true,
@@ -887,7 +887,7 @@ function TitanFarmFriend_GetButtonText(id)
   		str = str .. itemStr;
   	end
   end
-
+--[[
   -- No item found
   if str == '' then
     if showIcon then
@@ -896,8 +896,8 @@ function TitanFarmFriend_GetButtonText(id)
 
 		str = str .. ADDON_NAME;
   end
-
-	return str;
+--]]
+	return ADDON_NAME, str;
 end
 
 -- **************************************************************************
@@ -1055,7 +1055,10 @@ end
 -- NAME : TitanPanelRightClickMenu_PrepareFarmFriendMenu()
 -- DESC : Display rightclick menu options
 -- **************************************************************************
-function TitanPanelRightClickMenu_PrepareFarmFriendMenu(frame, level, menuList)
+function TitanPanelRightClickMenu_PrepareFarmFriendMenu () --(frame, level, menuList)
+
+   local level = TitanPanelRightClickMenu_GetDropdownLevel()
+   local menu_value = TitanPanelRightClickMenu_GetDropdMenuValue()
 
 	if level == 1 then
 
@@ -1064,23 +1067,23 @@ function TitanPanelRightClickMenu_PrepareFarmFriendMenu(frame, level, menuList)
 		info = {};
 		info.notCheckable = true;
 		info.text = L['TITAN_PANEL_OPTIONS'];
-		info.menuList = 'Options';
+		info.value = 'Options';
 		info.hasArrow = 1;
-		L_UIDropDownMenu_AddButton(info);
+		TitanPanelRightClickMenu_AddButton(info);
 
     info = {};
 		info.notCheckable = true;
 		info.text = L['FARM_Friend_NOTIFICATIONS'];
-		info.menuList = 'Notifications';
+		info.value = 'Notifications';
 		info.hasArrow = 1;
-		L_UIDropDownMenu_AddButton(info);
+		TitanPanelRightClickMenu_AddButton(info);
 
     info = {};
 		info.notCheckable = true;
 		info.text = L['FARM_Friend_ACTIONS'];
-		info.menuList = 'Actions';
+		info.value = 'Actions';
 		info.hasArrow = 1;
-		L_UIDropDownMenu_AddButton(info);
+		TitanPanelRightClickMenu_AddButton(info);
 
 		TitanPanelRightClickMenu_AddSpacer();
 		TitanPanelRightClickMenu_AddToggleIcon(TITAN_FARM_Friend_ID);
@@ -1092,7 +1095,7 @@ function TitanPanelRightClickMenu_PrepareFarmFriendMenu(frame, level, menuList)
 
 	elseif level == 2 then
 
-    if menuList == 'Options' then
+    if menu_value == 'Options' then
 
       TitanPanelRightClickMenu_AddTitle(L['TITAN_PANEL_OPTIONS'], level);
 
@@ -1100,66 +1103,66 @@ function TitanPanelRightClickMenu_PrepareFarmFriendMenu(frame, level, menuList)
   		info.text = L['FARM_Friend_SHOW_GOAL'];
   		info.func = TitanFarmFriend_ToggleShowQuantity;
   		info.checked = TitanGetVar(TITAN_FARM_Friend_ID, 'ShowQuantity');
-  		L_UIDropDownMenu_AddButton(info, level);
+  		TitanPanelRightClickMenu_AddButton(info, level);
 
   		info = {};
   		info.text = L['FARM_Friend_INCLUDE_BANK'];
   		info.func = TitanFarmFriend_ToggleIncludeBank;
   		info.checked = TitanGetVar(TITAN_FARM_Friend_ID, 'IncludeBank');
-  		L_UIDropDownMenu_AddButton(info, level);
+  		TitanPanelRightClickMenu_AddButton(info, level);
 
-    elseif menuList == 'Notifications' then
+    elseif menu_value == 'Notifications' then
 
       info = {};
   		info.text = L['FARM_Friend_NOTIFICATION'];
   		info.func = TitanFarmFriend_ToggleGoalNotification;
   		info.checked = TitanGetVar(TITAN_FARM_Friend_ID, 'GoalNotification');
-  		L_UIDropDownMenu_AddButton(info, level);
+  		TitanPanelRightClickMenu_AddButton(info, level);
 
-      L_UIDropDownMenu_AddSeparator({}, level);
+      TitanPanelRightClickMenu_AddSeparator(level);
 
       info = {};
   		info.text = L['FARM_Friend_NOTIFICATION_GLOW'];
   		info.func = TitanFarmFriend_ToggleNotificationGlow;
   		info.checked = TitanGetVar(TITAN_FARM_Friend_ID, 'NotificationGlow');
-  		L_UIDropDownMenu_AddButton(info, level);
+  		TitanPanelRightClickMenu_AddButton(info, level);
 
       info = {};
   		info.text = L['FARM_Friend_NOTIFICATION_SHINE'];
   		info.func = TitanFarmFriend_ToggleNotificationShine;
   		info.checked = TitanGetVar(TITAN_FARM_Friend_ID, 'NotificationShine');
-  		L_UIDropDownMenu_AddButton(info, level);
+  		TitanPanelRightClickMenu_AddButton(info, level);
 
       info = {};
   		info.text = L['FARM_Friend_PLAY_NOTIFICATION_SOUND'];
   		info.func = TitanFarmFriend_TogglePlayNotificationSound;
   		info.checked = TitanGetVar(TITAN_FARM_Friend_ID, 'PlayNotificationSound');
-  		L_UIDropDownMenu_AddButton(info, level);
+  		TitanPanelRightClickMenu_AddButton(info, level);
 
-    elseif menuList == 'Actions' then
+    elseif menu_value == 'Actions' then
 
       info = {};
     	info.notCheckable = true;
     	info.text = L['FARM_Friend_TEST_NOTIFICATION'];
     	info.value = 'SettingsCustom';
     	info.func = function() TitanFarmFriend:TestNotification(); end;
-      L_UIDropDownMenu_AddButton(info, level);
+      TitanPanelRightClickMenu_AddButton(info, level);
 
-      L_UIDropDownMenu_AddSeparator({}, level);
+      TitanPanelRightClickMenu_AddSeparator(level);
 
       info = {};
     	info.notCheckable = true;
     	info.text = L['FARM_Friend_RESET_ALL_ITEMS'];
     	info.value = '';
     	info.func = function() StaticPopup_Show(ADDON_NAME .. 'ResetAllItemsConfirm'); end;
-      L_UIDropDownMenu_AddButton(info, level);
+      TitanPanelRightClickMenu_AddButton(info, level);
 
       info = {};
     	info.notCheckable = true;
     	info.text = L['FARM_Friend_RESET_ALL'];
     	info.value = '';
     	info.func = function() StaticPopup_Show(ADDON_NAME .. 'ResetAllConfirm'); end;
-      L_UIDropDownMenu_AddButton(info, level);
+      TitanPanelRightClickMenu_AddButton(info, level);
     end
 	end
 end
