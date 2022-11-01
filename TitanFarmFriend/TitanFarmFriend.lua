@@ -140,7 +140,7 @@ end
 -- DESC : Is called when the Plugin gets enabled.
 -- **************************************************************************
 function TitanFarmFriend:OnEnable()
-  self:SecureHook('ContainerFrameItemButton_OnModifiedClick', 'ModifiedClick');
+--  self:SecureHook('ContainerFrameItemButton_OnModifiedClick', 'ModifiedClick');
   self:ScheduleRepeatingTimer('NotificationTask', 1);
 end
 
