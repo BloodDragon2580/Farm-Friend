@@ -4,7 +4,7 @@
 ## Author: BloddDragon2580
 ## SavedVariables: TitanFarmFriendDB
 ## Dependencies: Titan
-## Version: 5.3
+## Version: 5.4
 ## X-Child-Of: Titan
 
 embeds.xml
