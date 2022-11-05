@@ -141,7 +141,7 @@ function TitanFarmFriendNotification_ShowAnchor()
 
   -- Set Scale for Anchor frame
   TitanFarmFriendAnchor:SetScale(FRAME:GetEffectiveScale());
-  TitanFarmFriendAnchor.Name:SetText(L['FARM_Friend_ANCHOR_HELP_TEXT']);
+  TitanFarmFriendAnchor.Name:SetText(L['FARM_FRIEND_ANCHOR_HELP_TEXT']);
 
   InterfaceOptionsFrame:Hide();
   TitanFarmFriendAnchor:Show();

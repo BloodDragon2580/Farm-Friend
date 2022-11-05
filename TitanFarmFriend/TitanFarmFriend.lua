@@ -78,7 +78,7 @@ function TitanFarmFriend_OnLoad(self)
 		tooltipTitle = ADDON_NAME,
 		tooltipTextFunction = 'TitanFarmFriend_GetTooltipText',
 		icon = 'Interface\\AddOns\\TitanFarmFriend\\TitanFarmFriend',
-      iconWidth = 16,
+		iconWidth = 0,
 		controlVariables = {
 			ShowIcon = true,
 			ShowLabelText = true,
@@ -140,7 +140,7 @@ end
 -- DESC : Is called when the Plugin gets enabled.
 -- **************************************************************************
 function TitanFarmFriend:OnEnable()
---  self:SecureHook('ContainerFrameItemButton_OnModifiedClick', 'ModifiedClick');
+  self:SecureHook('HandleModifiedItemClick', 'ModifiedClick');
   self:ScheduleRepeatingTimer('NotificationTask', 1);
 end
 
@@ -486,7 +486,7 @@ function TitanFarmFriend:GetConfigOption()
           items_track_count_8 = TitanFarmFriend:GetTrackedItemQuantityField(8),
           items_track_show_bar_8 = TitanFarmFriend:GetTrackedItemShowBarField(8),
           items_clear_button_8 = TitanFarmFriend:GetTrackedItemClearButton(8),
-		  items_space_9 = {
+          items_space_9 = {
             type = 'description',
             name = '',
             order = TitanFarmFriend:GetOptionOrder('items'),
@@ -495,7 +495,7 @@ function TitanFarmFriend:GetConfigOption()
           items_track_count_9 = TitanFarmFriend:GetTrackedItemQuantityField(9),
           items_track_show_bar_9 = TitanFarmFriend:GetTrackedItemShowBarField(9),
           items_clear_button_9 = TitanFarmFriend:GetTrackedItemClearButton(9),
-		  items_space_10 = {
+          items_space_10 = {
             type = 'description',
             name = '',
             order = TitanFarmFriend:GetOptionOrder('items'),
@@ -504,7 +504,7 @@ function TitanFarmFriend:GetConfigOption()
           items_track_count_10 = TitanFarmFriend:GetTrackedItemQuantityField(10),
           items_track_show_bar_10 = TitanFarmFriend:GetTrackedItemShowBarField(10),
           items_clear_button_10 = TitanFarmFriend:GetTrackedItemClearButton(10),
-		  items_space_11 = {
+          items_space_11 = {
             type = 'description',
             name = '',
             order = TitanFarmFriend:GetOptionOrder('items'),
@@ -513,7 +513,7 @@ function TitanFarmFriend:GetConfigOption()
           items_track_count_11 = TitanFarmFriend:GetTrackedItemQuantityField(11),
           items_track_show_bar_11 = TitanFarmFriend:GetTrackedItemShowBarField(11),
           items_clear_button_11 = TitanFarmFriend:GetTrackedItemClearButton(11),
-		  items_space_12 = {
+          items_space_12 = {
             type = 'description',
             name = '',
             order = TitanFarmFriend:GetOptionOrder('items'),
@@ -602,7 +602,7 @@ function TitanFarmFriend:GetConfigOption()
           },
           notifications_notification_sound = {
             type = 'select',
-            name = L['TITAN_BUDDY_NOTIFICATION_SOUND'],
+            name = L['TITAN_FRIEND_NOTIFICATION_SOUND'],
             style = 'dropdown',
             values = TitanFarmFriend:GetSounds(),
             set = 'SetNotificationSound',
@@ -887,7 +887,7 @@ function TitanFarmFriend_GetButtonText(id)
   		str = str .. itemStr;
   	end
   end
---[[
+
   -- No item found
   if str == '' then
     if showIcon then
@@ -896,8 +896,8 @@ function TitanFarmFriend_GetButtonText(id)
 
 		str = str .. ADDON_NAME;
   end
---]]
-	return ADDON_NAME, str;
+
+	return str;
 end
 
 -- **************************************************************************
@@ -1034,7 +1034,10 @@ function TitanFarmFriend_GetTooltipText()
 
         strTmp = strTmp .. '\n';
     		strTmp = strTmp .. L['FARM_Friend_ITEM'] .. ':\t' .. TitanFarmFriend:GetIconString(itemInfo.IconFileDataID, true) .. TitanUtils_GetHighlightText(itemInfo.Name) .. '\n';
+    		strTmp = strTmp .. L['FARM_Friend_INVENTORY'] .. ':\t' .. TitanUtils_GetHighlightText(itemInfo.CountBags) .. '\n';
+    		strTmp = strTmp .. L['FARM_Friend_BANK'] .. ':\t' .. TitanUtils_GetHighlightText(itemInfo.CountBank) .. '\n';
     		strTmp = strTmp .. L['FARM_Friend_TOTAL'] .. ':\t' .. TitanUtils_GetHighlightText(itemInfo.CountTotal) .. '\n';
+    		strTmp = strTmp .. L['FARM_Friend_ALERT_COUNT'] .. ':\t' .. TitanUtils_GetHighlightText(goalValue) .. '\n';
         hasItem = true;
   		end
     end
@@ -1055,10 +1058,7 @@ end
 -- NAME : TitanPanelRightClickMenu_PrepareFarmFriendMenu()
 -- DESC : Display rightclick menu options
 -- **************************************************************************
-function TitanPanelRightClickMenu_PrepareFarmFriendMenu () --(frame, level, menuList)
-
-   local level = TitanPanelRightClickMenu_GetDropdownLevel()
-   local menu_value = TitanPanelRightClickMenu_GetDropdMenuValue()
+function TitanPanelRightClickMenu_PrepareFarmFriendMenu(frame, level, menuList)
 
 	if level == 1 then
 
@@ -1067,23 +1067,23 @@ function TitanPanelRightClickMenu_PrepareFarmFriendMenu () --(frame, level, menu
 		info = {};
 		info.notCheckable = true;
 		info.text = L['TITAN_PANEL_OPTIONS'];
-		info.value = 'Options';
+		info.menuList = 'Options';
 		info.hasArrow = 1;
-		TitanPanelRightClickMenu_AddButton(info);
+    UIDropDownMenu_AddButton(info);
 
     info = {};
 		info.notCheckable = true;
 		info.text = L['FARM_Friend_NOTIFICATIONS'];
-		info.value = 'Notifications';
+		info.menuList = 'Notifications';
 		info.hasArrow = 1;
-		TitanPanelRightClickMenu_AddButton(info);
+    UIDropDownMenu_AddButton(info);
 
     info = {};
 		info.notCheckable = true;
 		info.text = L['FARM_Friend_ACTIONS'];
-		info.value = 'Actions';
+		info.menuList = 'Actions';
 		info.hasArrow = 1;
-		TitanPanelRightClickMenu_AddButton(info);
+    UIDropDownMenu_AddButton(info);
 
 		TitanPanelRightClickMenu_AddSpacer();
 		TitanPanelRightClickMenu_AddToggleIcon(TITAN_FARM_Friend_ID);
@@ -1095,7 +1095,7 @@ function TitanPanelRightClickMenu_PrepareFarmFriendMenu () --(frame, level, menu
 
 	elseif level == 2 then
 
-    if menu_value == 'Options' then
+    if menuList == 'Options' then
 
       TitanPanelRightClickMenu_AddTitle(L['TITAN_PANEL_OPTIONS'], level);
 
@@ -1103,66 +1103,66 @@ function TitanPanelRightClickMenu_PrepareFarmFriendMenu () --(frame, level, menu
   		info.text = L['FARM_Friend_SHOW_GOAL'];
   		info.func = TitanFarmFriend_ToggleShowQuantity;
   		info.checked = TitanGetVar(TITAN_FARM_Friend_ID, 'ShowQuantity');
-  		TitanPanelRightClickMenu_AddButton(info, level);
+      UIDropDownMenu_AddButton(info, level);
 
   		info = {};
   		info.text = L['FARM_Friend_INCLUDE_BANK'];
   		info.func = TitanFarmFriend_ToggleIncludeBank;
   		info.checked = TitanGetVar(TITAN_FARM_Friend_ID, 'IncludeBank');
-  		TitanPanelRightClickMenu_AddButton(info, level);
+      UIDropDownMenu_AddButton(info, level);
 
-    elseif menu_value == 'Notifications' then
+    elseif menuList == 'Notifications' then
 
       info = {};
   		info.text = L['FARM_Friend_NOTIFICATION'];
   		info.func = TitanFarmFriend_ToggleGoalNotification;
   		info.checked = TitanGetVar(TITAN_FARM_Friend_ID, 'GoalNotification');
-  		TitanPanelRightClickMenu_AddButton(info, level);
+      UIDropDownMenu_AddButton(info, level);
 
-      TitanPanelRightClickMenu_AddSeparator(level);
+      UIDropDownMenu_AddSeparator(level);
 
       info = {};
   		info.text = L['FARM_Friend_NOTIFICATION_GLOW'];
   		info.func = TitanFarmFriend_ToggleNotificationGlow;
   		info.checked = TitanGetVar(TITAN_FARM_Friend_ID, 'NotificationGlow');
-  		TitanPanelRightClickMenu_AddButton(info, level);
+  		UIDropDownMenu_AddButton(info, level);
 
       info = {};
   		info.text = L['FARM_Friend_NOTIFICATION_SHINE'];
   		info.func = TitanFarmFriend_ToggleNotificationShine;
   		info.checked = TitanGetVar(TITAN_FARM_Friend_ID, 'NotificationShine');
-  		TitanPanelRightClickMenu_AddButton(info, level);
+  		UIDropDownMenu_AddButton(info, level);
 
       info = {};
   		info.text = L['FARM_Friend_PLAY_NOTIFICATION_SOUND'];
   		info.func = TitanFarmFriend_TogglePlayNotificationSound;
   		info.checked = TitanGetVar(TITAN_FARM_Friend_ID, 'PlayNotificationSound');
-  		TitanPanelRightClickMenu_AddButton(info, level);
+  		UIDropDownMenu_AddButton(info, level);
 
-    elseif menu_value == 'Actions' then
+    elseif menuList == 'Actions' then
 
       info = {};
     	info.notCheckable = true;
     	info.text = L['FARM_Friend_TEST_NOTIFICATION'];
     	info.value = 'SettingsCustom';
     	info.func = function() TitanFarmFriend:TestNotification(); end;
-      TitanPanelRightClickMenu_AddButton(info, level);
+      UIDropDownMenu_AddButton(info, level);
 
-      TitanPanelRightClickMenu_AddSeparator(level);
+      UIDropDownMenu_AddSeparator(level);
 
       info = {};
     	info.notCheckable = true;
     	info.text = L['FARM_Friend_RESET_ALL_ITEMS'];
     	info.value = '';
     	info.func = function() StaticPopup_Show(ADDON_NAME .. 'ResetAllItemsConfirm'); end;
-      TitanPanelRightClickMenu_AddButton(info, level);
+      UIDropDownMenu_AddButton(info, level);
 
       info = {};
     	info.notCheckable = true;
     	info.text = L['FARM_Friend_RESET_ALL'];
     	info.value = '';
     	info.func = function() StaticPopup_Show(ADDON_NAME .. 'ResetAllConfirm'); end;
-      TitanPanelRightClickMenu_AddButton(info, level);
+      UIDropDownMenu_AddButton(info, level);
     end
 	end
 end
@@ -1692,7 +1692,12 @@ end
 -- NAME : TitanFarmFriend:ModifiedClick()
 -- DESC : Is called when an item is clicked with modifier key.
 -- **************************************************************************
-function TitanFarmFriend:ModifiedClick(handle, button, ...)
+function TitanFarmFriend:ModifiedClick(itemLink, itemLocation)
+
+  -- item location is only not nil for bag item clicks
+  if itemLocation == nil then
+    return;
+  end
 
   local fastTrackingMouseButton = TitanGetVar(TITAN_FARM_Friend_ID, 'FastTrackingMouseButton');
   local fastTrackingKeys = TitanGetVar(TITAN_FARM_Friend_ID, 'FastTrackingKeys');
@@ -1735,11 +1740,7 @@ function TitanFarmFriend:ModifiedClick(handle, button, ...)
     end
   end
 
-  if button == fastTrackingMouseButton and not CursorHasItem() and conditions == true then
-    local bagID = handle:GetParent():GetID();
-    local bagSlot = handle:GetID();
-    local itemLink = GetContainerItemLink(bagID, bagSlot);
-
+  if GetMouseButtonClicked() == fastTrackingMouseButton and not CursorHasItem() and conditions == true then
     if itemLink ~= nil then
 
       local dialog = StaticPopup_Show(ADDON_NAME .. 'SetItemIndex', tostring(ITEMS_AVAILABLE));

@@ -185,11 +185,11 @@ L["FARM_Friend_TOTAL"] = "Total"
 --Translation missing 
 L["FARM_Friend_TRACK_ITEM_PARAM_MISSING"] = "You have to set an Item Name or Item Link as second parameter."
 --Translation missing 
-L["FARM_Friend_TRACKING_DESC"] = "You can track up to 4 items at once and select one item that is shown in the titan bar the other items are shown in the tooltip of Farm Buddy."
+L["FARM_Friend_TRACKING_DESC"] = "You can track up to 12 items at once and select one item that is shown in the titan bar the other items are shown in the tooltip of Farm Buddy."
 --Translation missing 
 L["FARM_Friend_VERSION"] = "Version"
 --Translation missing 
-L["TITAN_BUDDY_NOTIFICATION_SOUND"] = "Notification Sound"
+L["TITAN_FRIEND_NOTIFICATION_SOUND"] = "Notification Sound"
 --Translation missing 
 L["TITAN_FARM_Friend_CANCEL"] = "Cancel"
 --Translation missing 
