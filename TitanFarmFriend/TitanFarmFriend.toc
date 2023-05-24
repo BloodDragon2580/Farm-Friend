@@ -4,8 +4,9 @@
 ## Author: BloddDragon2580
 ## SavedVariables: TitanFarmFriendDB
 ## Dependencies: Titan
-## Version: 6.3
+## Version: 6.4
 ## X-Child-Of: Titan
+## IconTexture: Interface\AddOns\TitanFarmFriend\Media\Texture\logo
 
 embeds.xml
 
