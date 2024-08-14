@@ -2,7 +2,7 @@ local TITAN_FARM_Friend_ID = 'FarmFriend';
 local ADDON_NAME = 'Titan Farm Friend';
 local L = LibStub('AceLocale-3.0'):GetLocale('Titan', true);
 local TitanFarmFriend = LibStub('AceAddon-3.0'):NewAddon(TITAN_FARM_Friend_ID, 'AceConsole-3.0', 'AceHook-3.0', 'AceTimer-3.0', 'AceEvent-3.0');
-local ADDON_VERSION = GetAddOnMetadata('TitanFarmFriend', 'Version');
+local ADDON_VERSION = C_AddOns.GetAddOnMetadata('TitanFarmFriend', 'Version');
 local OPTION_ORDER = {};
 local ITEMS_AVAILABLE = 12;
 local ITEM_DISPLAY_STYLES = {};
@@ -266,7 +266,7 @@ function TitanFarmFriend:GetConfigOption()
       },
       info_author = {
         type = 'description',
-        name = L['FARM_Friend_AUTHOR'] .. ': ' .. GetAddOnMetadata('TitanFarmFriend', 'Author'),
+        name = L['FARM_Friend_AUTHOR'] .. ': ' .. C_AddOns.GetAddOnMetadata('TitanFarmFriend', 'Author'),
         order = TitanFarmFriend:GetOptionOrder('main'),
       },
       tab_general = {
@@ -725,7 +725,7 @@ function TitanFarmFriend:GetConfigOption()
           },
           about_info_author = {
             type = 'description',
-            name = GetAddOnMetadata('TitanFarmFriend', 'Author'),
+            name = C_AddOns.GetAddOnMetadata('TitanFarmFriend', 'Author'),
             order = TitanFarmFriend:GetOptionOrder('about'),
             width = 'double',
           },
