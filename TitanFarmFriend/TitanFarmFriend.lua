@@ -965,8 +965,7 @@ function TitanFarmFriend_OnClick(self, button)
 	if (button == 'LeftButton') then
 		-- Workarround for opening controls instead of AddOn options
 		-- Call it two times to ensure the AddOn panel is opened
-		InterfaceOptionsFrame_OpenToCategory(ADDON_NAME);
-		InterfaceOptionsFrame_OpenToCategory(ADDON_NAME);
+		Settings.OpenToCategory(ADDON_NAME);
  	end
 end
 
