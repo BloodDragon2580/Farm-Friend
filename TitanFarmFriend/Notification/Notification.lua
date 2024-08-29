@@ -117,7 +117,7 @@ function TitanFarmFriendNotification_OnMouseDown(self, button)
 
   if button == 'RightButton' and not self.isMoving then
     self:Hide();
-    InterfaceOptionsFrame_OpenToCategory(ADDON_NAME);
+    Settings.OpenToCategory(ADDON_NAME);
   end
 end
 
