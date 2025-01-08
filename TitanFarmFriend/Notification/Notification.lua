@@ -143,7 +143,6 @@ function TitanFarmFriendNotification_ShowAnchor()
   TitanFarmFriendAnchor:SetScale(FRAME:GetEffectiveScale());
   TitanFarmFriendAnchor.Name:SetText(L['FARM_FRIEND_ANCHOR_HELP_TEXT']);
 
-  InterfaceOptionsFrame:Hide();
   TitanFarmFriendAnchor:Show();
 end
 
