@@ -120,7 +120,7 @@ function TitanFarmFriend_OnLoad(self)
 			GoalNotification = true,
 			IncludeBank = false,
 			ShowQuantity = true,
-			GoalNotificationSound = SOUNDKIT.UI_WORLDQUEST_COMPLETE,
+			GoalNotificationSound = SOUNDKIT.ALARM_CLOCK_WARNING_3,
 			PlayNotificationSound = true,
       NotificationDisplayDuration = 5,
       NotificationGlow = true,
@@ -211,7 +211,7 @@ function TitanFarmFriend_SetItemIndexOnShow(self)
     end
   end
 
-  -- Set default value for dialog editbox
+  -- Set default value for dialog edit box
   getglobal(self:GetName() .. 'EditBox'):SetText(tostring(defaultIndex));
 end
 
@@ -902,7 +902,7 @@ end
 
 -- **************************************************************************
 -- NAME : TitanFarmFriend:GetItemString()
--- DESC : Gets the item strinf to diplay on the Titan Panel button.
+-- DESC : Gets the item string to display on the Titan Panel button.
 -- **************************************************************************
 function TitanFarmFriend:GetItemString(item, showIcon)
 
@@ -1053,7 +1053,7 @@ end
 
 -- **************************************************************************
 -- NAME : TitanPanelRightClickMenu_PrepareFarmFriendMenu()
--- DESC : Display rightclick menu options
+-- DESC : Display right click menu options
 -- **************************************************************************
 function TitanPanelRightClickMenu_PrepareFarmFriendMenu(frame, level, menuList)
 
@@ -1213,13 +1213,13 @@ end
 -- **************************************************************************
 function TitanFarmFriend_OnShow(self)
 
-  -- SOUNDKIT Fux for Patch 7.3
+  -- SOUNDKIT Fix for Patch 7.3
   -- Since 7.3 the sound is a number so check if we have a string
   -- from AddON version <= 1.1.6
   local sound = TitanGetVar(TITAN_FARM_Friend_ID, 'GoalNotificationSound');
   if sound ~= nil then
     if not tonumber(sound) then
-      TitanSetVar(TITAN_FARM_Friend_ID, 'GoalNotificationSound', SOUNDKIT.UI_WORLDQUEST_COMPLETE);
+      TitanSetVar(TITAN_FARM_Friend_ID, 'GoalNotificationSound', SOUNDKIT.ALARM_CLOCK_WARNING_3);
     end
   end
 
@@ -1643,7 +1643,7 @@ function TitanFarmFriend:ResetConfig(itemsOnly)
   	TitanSetVar(TITAN_FARM_Friend_ID, 'ShowIcon', true);
   	TitanSetVar(TITAN_FARM_Friend_ID, 'ShowLabelText', true);
   	TitanSetVar(TITAN_FARM_Friend_ID, 'ShowColoredText', true);
-  	TitanSetVar(TITAN_FARM_Friend_ID, 'GoalNotificationSound', 'UI_WORLDQUEST_COMPLETE');
+  	TitanSetVar(TITAN_FARM_Friend_ID, 'GoalNotificationSound', 'ALARM_CLOCK_WARNING_3');
   	TitanSetVar(TITAN_FARM_Friend_ID, 'PlayNotificationSound', true);
   	TitanSetVar(TITAN_FARM_Friend_ID, 'NotificationDisplayDuration', 5);
   	TitanSetVar(TITAN_FARM_Friend_ID, 'ItemShowInBarIndex', 1);
@@ -1691,8 +1691,8 @@ end
 -- **************************************************************************
 function TitanFarmFriend:ModifiedClick(itemLink, itemLocation)
 
-  -- item location is only not nil for bag item clicks
-  if itemLocation == nil then
+  -- item location can be nil for bags/bank/mail and is not nil for inventory slots, make an explicit check
+  if itemLocation and itemLocation.IsBagAndSlot and (not itemLocation:IsBagAndSlot()) then
     return;
   end
 
