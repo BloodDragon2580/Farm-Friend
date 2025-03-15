@@ -4,7 +4,7 @@
 ## Author: BloddDragon2580
 ## SavedVariables: TitanFarmFriendDB
 ## Dependencies: Titan
-## Version: 12.2
+## Version: 12.3
 ## X-Child-Of: Titan
 ## IconTexture: Interface\AddOns\TitanFarmFriend\Media\Texture\logo
 
