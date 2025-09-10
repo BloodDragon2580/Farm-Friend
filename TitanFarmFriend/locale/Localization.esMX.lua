@@ -2,205 +2,108 @@ local L = LibStub('AceLocale-3.0'):NewLocale('Titan', 'esMX', false)
 if not L then return end
 
 L = L or {}
---Translation missing 
-L["FARM_Friend_ABOUT"] = "About"
---Translation missing 
-L["FARM_Friend_ACTIONS"] = "Actions"
---Translation missing 
-L["FARM_Friend_ALERT_COUNT"] = "Quantity for Alert"
---Translation missing 
-L["FARM_Friend_ALERT_COUNT_USAGE"] = "An quantity for your farming goal."
---Translation missing 
-L["FARM_Friend_ANCHOR_HELP_TEXT"] = "Hold left mouse button to move. Right click to close."
---Translation missing 
-L["FARM_Friend_AUTHOR"] = "Author"
---Translation missing 
-L["FARM_Friend_BANK"] = "Bank"
---Translation missing 
-L["FARM_Friend_CHAT_COMMANDS"] = "Chat Commands"
---Translation missing 
-L["FARM_Friend_COMMAND_GOAL_ARGS"] = "Quantity"
---Translation missing 
-L["FARM_Friend_COMMAND_GOAL_DESC"] = "Sets the goal quantity."
---Translation missing 
-L["FARM_Friend_COMMAND_GOAL_PARAM_MISSING"] = "You have to set a quantity as second parameter."
---Translation missing 
-L["FARM_Friend_COMMAND_HELP_DESC"] = "Prints this information."
---Translation missing 
-L["FARM_Friend_COMMAND_LIST"] = "List of Chat Commands"
---Translation missing 
-L["FARM_Friend_COMMAND_PRIMARY_ARGS"] = "Position between 1 and !max!"
---Translation missing 
-L["FARM_Friend_COMMAND_PRIMARY_DESC"] = "Sets the items position that would be shown in the Titan Panel bar."
---Translation missing 
+L["FARM_Friend_ABOUT"] = "Acerca de"
+L["FARM_Friend_ACTIONS"] = "Acciones"
+L["FARM_Friend_ALERT_COUNT"] = "Cantidad para notificación"
+L["FARM_Friend_ALERT_COUNT_USAGE"] = "La cantidad deseada del objeto observado."
+L["FARM_Friend_ANCHOR_HELP_TEXT"] = "Mantén presionado el botón izquierdo del ratón para mover. Clic derecho para cerrar."
+L["FARM_Friend_AUTHOR"] = "Autor"
+L["FARM_Friend_BANK"] = "Banco"
+L["FARM_Friend_CHAT_COMMANDS"] = "Comandos de chat"
+L["FARM_Friend_COMMAND_GOAL_ARGS"] = "Cantidad"
+L["FARM_Friend_COMMAND_GOAL_DESC"] = "Establece la cantidad de objetos necesaria para alcanzar el objetivo."
+L["FARM_Friend_COMMAND_GOAL_PARAM_MISSING"] = "Debes ingresar una cantidad como segundo parámetro."
+L["FARM_Friend_COMMAND_HELP_DESC"] = "Muestra esta ayuda."
+L["FARM_Friend_COMMAND_LIST"] = "Lista de comandos de chat"
+L["FARM_Friend_COMMAND_PRIMARY_ARGS"] = "Posición entre 1 y !max!"
+L["FARM_Friend_COMMAND_PRIMARY_DESC"] = "Establece la posición del objeto que se mostrará en la barra de Titan Panel."
 L["FARM_Friend_COMMAND_RESET_ARGS"] = "all | items"
---Translation missing 
-L["FARM_Friend_COMMAND_RESET_DESC"] = "Resets Farm Buddy to it's default settings."
---Translation missing 
-L["FARM_Friend_COMMAND_SETTINGS_DESC"] = "Open up the AddOn settings page."
---Translation missing 
-L["FARM_Friend_COMMAND_TRACK_ARGS"] = "Item Name|Item Link"
---Translation missing 
-L["FARM_Friend_COMMAND_TRACK_DESC"] = "Sets the tracked item."
---Translation missing 
-L["FARM_Friend_COMMAND_VERSION_DESC"] = "Show the current used Farm Buddy Version."
---Translation missing 
-L["FARM_Friend_CONFIG_RESET_MSG"] = "The configuration has been set back to the defaults."
---Translation missing 
-L["FARM_Friend_FAST_TRACKING_MOUSE_BUTTON"] = "Fast tracking mouse button"
---Translation missing 
-L["FARM_Friend_FAST_TRACKING_SHORTCUTS"] = "Fast tracking shortcuts"
---Translation missing 
-L["FARM_Friend_FAST_TRACKING_SHORTCUTS_DESC"] = "Combine your desired keys as a fast tracking shortcut. Fast tracking allows you to track an item from your inventory with these shortcut."
---Translation missing 
-L["FARM_Friend_GERMAN"] = "German"
---Translation missing 
-L["FARM_Friend_GOAL_SET"] = "The goal quantity has been set."
---Translation missing 
-L["FARM_Friend_INCLUDE_BANK"] = "Include items in your bank"
---Translation missing 
-L["FARM_Friend_INCLUDE_BANK_DESC"] = "If enabled items in your bank are included when counting the farmed item."
---Translation missing 
-L["FARM_Friend_INVALID_NUMBER"] = "The entered number is not a valid number."
---Translation missing 
-L["FARM_Friend_INVENTORY"] = "Inventory"
---Translation missing 
-L["FARM_Friend_ITEM"] = "Item"
---Translation missing 
-L["FARM_Friend_ITEM_DISPLAY_STYLE"] = "Item Display Style in Titan Bar"
---Translation missing 
-L["FARM_Friend_ITEM_DISPLAY_STYLE_1"] = "Only the primary Item"
---Translation missing 
-L["FARM_Friend_ITEM_DISPLAY_STYLE_2"] = "Show all Items"
---Translation missing 
-L["FARM_Friend_ITEM_DISPLAY_STYLE_DESC"] = "The item display style in the Titan Panel Bar."
---Translation missing 
-L["FARM_Friend_ITEM_NOT_EXISTS"] = "The item does not exists."
---Translation missing 
-L["FARM_Friend_ITEM_PRIMARY_SET_MSG"] = "The item on position !position! is now the primary item to display."
---Translation missing 
-L["FARM_Friend_ITEM_SET_MSG"] = "!itemName! is now your tracked item!"
---Translation missing 
-L["FARM_Friend_ITEM_SET_POSITION_MSG"] = "The entered position is not valid. Pleaser enter a position between 1 and max!."
---Translation missing 
-L["FARM_Friend_ITEM_TO_TRACK_DESC"] = "The name of the item to track"
---Translation missing 
-L["FARM_Friend_ITEM_TO_TRACK_USAGE"] = "Enter the name of an item or CTRL + Click an item from your inventory. Please note: The item have to be in your World of Warcraft Data Cache otherwise the item is not known to the AddOn API functions."
---Translation missing 
-L["FARM_Friend_ITEMS"] = "Items"
---Translation missing 
+L["FARM_Friend_COMMAND_RESET_DESC"] = "Restaura Farm Friend a su configuración predeterminada."
+L["FARM_Friend_COMMAND_SETTINGS_DESC"] = "Abre la ventana de configuración del AddOn."
+L["FARM_Friend_COMMAND_TRACK_ARGS"] = "ID de objeto | Enlace de objeto | Nombre de objeto"
+L["FARM_Friend_COMMAND_TRACK_DESC"] = "Configura el objeto a seguir."
+L["FARM_Friend_COMMAND_VERSION_DESC"] = "Muestra la versión actual de Farm Friend."
+L["FARM_Friend_CONFIG_RESET_MSG"] = "La configuración se ha restablecido a los valores predeterminados."
+L["FARM_Friend_FAST_TRACKING_MOUSE_BUTTON"] = "Botón de ratón para seguimiento rápido"
+L["FARM_Friend_FAST_TRACKING_SHORTCUTS"] = "Atajos de seguimiento rápido"
+L["FARM_Friend_FAST_TRACKING_SHORTCUTS_DESC"] = "Combina las teclas que quieras para crear un atajo de seguimiento rápido. Con este atajo puedes agregar un objeto de tu inventario a la lista de seguimiento al instante."
+L["FARM_Friend_GERMAN"] = "Alemán"
+L["FARM_Friend_ENGLISH"] = "Inglés"
+L["FARM_Friend_RUSSIAN"] = "Ruso"
+L["FARM_Friend_GOAL_SET"] = "El nuevo objetivo ha sido establecido."
+L["FARM_Friend_INCLUDE_BANK"] = "Incluir objetos en el banco"
+L["FARM_Friend_INCLUDE_BANK_DESC"] = "Si está activado, los objetos en el banco del personaje se suman al total."
+L["FARM_Friend_INVALID_NUMBER"] = "El número introducido no es válido."
+L["FARM_Friend_INVENTORY"] = "Inventario"
+L["FARM_Friend_ITEM"] = "Objeto"
+L["FARM_Friend_ITEM_DISPLAY_STYLE"] = "Estilo de visualización en Titan Bar"
+L["FARM_Friend_ITEM_DISPLAY_STYLE_1"] = "Mostrar solo el objeto principal"
+L["FARM_Friend_ITEM_DISPLAY_STYLE_2"] = "Mostrar todos los objetos"
+L["FARM_Friend_ITEM_DISPLAY_STYLE_DESC"] = "El estilo de visualización en la barra de Titan Panel."
+L["FARM_Friend_ITEM_NOT_EXISTS"] = "No se encontró el objeto."
+L["FARM_Friend_ITEM_PRIMARY_SET_MSG"] = "El objeto en la posición !position! ahora se muestra como principal."
+L["FARM_Friend_ITEM_SET_MSG"] = "¡!itemName! ahora es tu objeto observado!"
+L["FARM_Friend_ITEM_SET_POSITION_MSG"] = "La posición ingresada no es válida. Ingresa un número entre 1 y !max!."
+L["FARM_Friend_ITEM_TO_TRACK_DESC"] = "Nombre del objeto a observar"
+L["FARM_Friend_ITEM_TO_TRACK_USAGE"] = "Ingresa el nombre del objeto o usa CTRL + clic en el inventario para seleccionarlo. Nota: el objeto debe estar en la caché de World of Warcraft para que el AddOn lo reconozca."
+L["FARM_Friend_ITEMS"] = "Objetos"
 L["FARM_Friend_KEY_ALT"] = "Alt"
---Translation missing 
 L["FARM_Friend_KEY_CTRL"] = "Ctrl"
---Translation missing 
-L["FARM_Friend_KEY_LEFT_MOUSE_BUTTON"] = "Left mouse button"
---Translation missing 
-L["FARM_Friend_KEY_RIGHT_MOUSE_BUTTON"] = "Right mouse button"
---Translation missing 
+L["FARM_Friend_KEY_LEFT_MOUSE_BUTTON"] = "Botón izquierdo del ratón"
+L["FARM_Friend_KEY_RIGHT_MOUSE_BUTTON"] = "Botón derecho del ratón"
 L["FARM_Friend_KEY_SHIFT"] = "Shift"
---Translation missing 
-L["FARM_Friend_LOCALIZATION"] = "Localization"
---Translation missing 
-L["FARM_Friend_MOVE_NOTIFICATION"] = "Change Notification Position"
---Translation missing 
-L["FARM_Friend_MOVE_NOTIFICATION_DESC"] = "Change the Position of the Notification Frame."
---Translation missing 
-L["FARM_Friend_NO_GOAL"] = "No goal defined"
---Translation missing 
-L["FARM_Friend_NO_ITEM_TRACKED"] = "You have no item for tracking selected."
---Translation missing 
-L["FARM_Friend_NOTIFICATION"] = "Enable Notifications"
---Translation missing 
-L["FARM_Friend_NOTIFICATION_DEMO_ITEM_NAME"] = "Hearthstone"
---Translation missing 
-L["FARM_Friend_NOTIFICATION_DESC"] = "Shows a notification if the item quantity has reached."
---Translation missing 
-L["FARM_Friend_NOTIFICATION_GLOW"] = "Show Glow Effect"
---Translation missing 
-L["FARM_Friend_NOTIFICATION_GLOW_DESC"] = "Shows a glow effect if a notification is shown."
---Translation missing 
-L["FARM_Friend_NOTIFICATION_SHINE"] = "Show Shine Effect"
---Translation missing 
-L["FARM_Friend_NOTIFICATION_SHINE_DESC"] = "Shows a shine effect if a notification is shown."
---Translation missing 
-L["FARM_Friend_NOTIFICATIONS"] = "Notifications"
---Translation missing 
-L["FARM_Friend_PLAY_NOTIFICATION_DISPLAY_DURATION"] = "Notification Display Duration"
---Translation missing 
-L["FARM_Friend_PLAY_NOTIFICATION_DISPLAY_DURATION_DESC"] = "The Notification Display Duration in seconds."
---Translation missing 
-L["FARM_Friend_PLAY_NOTIFICATION_SOUND"] = "Play Notification Sound"
---Translation missing 
-L["FARM_Friend_PLAY_NOTIFICATION_SOUND_DESC"] = "Play a notification sound file if the farm goal has reached."
---Translation missing 
-L["FARM_Friend_QUANTITY"] = "Quantity"
---Translation missing 
-L["FARM_Friend_RESET"] = "Reset"
---Translation missing 
-L["FARM_Friend_RESET_ALL"] = "Reset settings to default"
---Translation missing 
-L["FARM_Friend_RESET_ALL_DESC"] = "Reset all settings to default values."
---Translation missing 
-L["FARM_Friend_RESET_ALL_ITEMS"] = "Reset all tracked Items"
---Translation missing 
-L["FARM_Friend_RESET_ALL_ITEMS_DESC"] = "Resets all tracked items."
---Translation missing 
-L["FARM_Friend_RESET_DESC"] = "Resets the tracked item."
---Translation missing 
-L["FARM_Friend_SETTINGS"] = "Common"
---Translation missing 
-L["FARM_Friend_SHORTCUTS"] = "Shortcuts"
---Translation missing 
-L["FARM_Friend_SHOW_COLORED_TEXT"] = "Show Colored Text"
---Translation missing 
-L["FARM_Friend_SHOW_COLORED_TEXT_DESC"] = "Show the item count as colored text on the Titan Bar."
---Translation missing 
-L["FARM_Friend_SHOW_GOAL"] = "Show Goal on Titan Bar"
---Translation missing 
-L["FARM_Friend_SHOW_GOAL_DESC"] = "Show the goal quantity on the Titan Bar if a goal is defined."
---Translation missing 
-L["FARM_Friend_SHOW_ICON"] = "Show icon"
---Translation missing 
-L["FARM_Friend_SHOW_ICON_DESC"] = "Show the item icon on the Titan Bar."
---Translation missing 
-L["FARM_Friend_SHOW_IN_BAR"] = "Primary"
---Translation missing 
-L["FARM_Friend_SHOW_IN_BAR_DESC"] = "If this checkbox is enabled the items farm status will be shown on the Titan Panel bar."
---Translation missing 
-L["FARM_Friend_SHOW_NAME"] = "Show item name"
---Translation missing 
-L["FARM_Friend_SHOW_NAME_DESC"] = "Show the item name on the Titan Bar."
---Translation missing 
-L["FARM_Friend_SUMMARY"] = "Summary"
---Translation missing 
-L["FARM_Friend_TEST_NOTIFICATION"] = "Test Notification"
---Translation missing 
-L["FARM_Friend_TEST_NOTIFICATION_DESC"] = "Triggers a test for the finish notification."
---Translation missing 
-L["FARM_Friend_TOOLTIP_DESC"] = "Left click to open the Settings."
---Translation missing 
-L["FARM_Friend_TOOLTIP_MODIFIER"] = "Alt + Right click on an item in your Bag to set item."
---Translation missing 
+L["FARM_Friend_LOCALIZATION"] = "Traducción"
+L["FARM_Friend_MOVE_NOTIFICATION"] = "Mover posición de notificación"
+L["FARM_Friend_MOVE_NOTIFICATION_DESC"] = "Permite mover la posición de la notificación."
+L["FARM_Friend_NO_GOAL"] = "Sin cantidad definida"
+L["FARM_Friend_NO_ITEM_TRACKED"] = "No has seleccionado ningún objeto para seguir."
+L["FARM_Friend_NOTIFICATION"] = "Activar notificaciones"
+L["FARM_Friend_NOTIFICATION_DEMO_ITEM_NAME"] = "Piedra de hogar"
+L["FARM_Friend_NOTIFICATION_DESC"] = "Muestra una notificación cuando se alcanza la cantidad objetivo."
+L["FARM_Friend_NOTIFICATION_GLOW"] = "Usar efecto de brillo"
+L["FARM_Friend_NOTIFICATION_GLOW_DESC"] = "Muestra un efecto brillante cuando aparece una notificación."
+L["FARM_Friend_NOTIFICATION_SHINE"] = "Mostrar efecto de resplandor"
+L["FARM_Friend_NOTIFICATION_SHINE_DESC"] = "Muestra un efecto de resplandor cuando aparece una notificación."
+L["FARM_Friend_NOTIFICATIONS"] = "Notificaciones"
+L["FARM_Friend_PLAY_NOTIFICATION_DISPLAY_DURATION"] = "Duración de la notificación"
+L["FARM_Friend_PLAY_NOTIFICATION_DISPLAY_DURATION_DESC"] = "Duración en segundos de la notificación."
+L["FARM_Friend_PLAY_NOTIFICATION_SOUND"] = "Reproducir sonido de notificación"
+L["FARM_Friend_PLAY_NOTIFICATION_SOUND_DESC"] = "Reproduce un sonido cuando se alcanza el objetivo."
+L["FARM_Friend_QUANTITY"] = "Cantidad"
+L["FARM_Friend_RESET"] = "Restablecer"
+L["FARM_Friend_RESET_ALL"] = "Restablecer valores predeterminados"
+L["FARM_Friend_RESET_ALL_DESC"] = "Restaura toda la configuración a los valores predeterminados."
+L["FARM_Friend_RESET_ALL_ITEMS"] = "Restablecer todos los objetos"
+L["FARM_Friend_RESET_ALL_ITEMS_DESC"] = "Elimina la lista de objetos observados."
+L["FARM_Friend_RESET_DESC"] = "Reinicia el progreso del objeto."
+L["FARM_Friend_SETTINGS"] = "General"
+L["FARM_Friend_SHORTCUTS"] = "Atajos"
+L["FARM_Friend_SHOW_COLORED_TEXT"] = "Mostrar texto en color"
+L["FARM_Friend_SHOW_COLORED_TEXT_DESC"] = "Muestra la cantidad de objetos en color en la barra de Titan."
+L["FARM_Friend_SHOW_GOAL"] = "Mostrar objetivo en Titan Bar"
+L["FARM_Friend_SHOW_GOAL_DESC"] = "Muestra la cantidad definida como objetivo en la barra de Titan."
+L["FARM_Friend_SHOW_ICON"] = "Mostrar ícono"
+L["FARM_Friend_SHOW_ICON_DESC"] = "Muestra el ícono del objeto en la barra de Titan."
+L["FARM_Friend_SHOW_IN_BAR"] = "Primario"
+L["FARM_Friend_SHOW_IN_BAR_DESC"] = "Si está activado, el estado de farmeo del objeto se muestra en la barra de Titan."
+L["FARM_Friend_SHOW_NAME"] = "Mostrar nombre del objeto"
+L["FARM_Friend_SHOW_NAME_DESC"] = "Muestra el nombre del objeto en la barra de Titan."
+L["FARM_Friend_SUMMARY"] = "Resumen"
+L["FARM_Friend_SUPPORT"] = "Soporte"
+L["FARM_Friend_SUPPORT_TEXT"] = "paypal.me/darkbrain"
+L["FARM_Friend_TEST_NOTIFICATION"] = "Probar notificación"
+L["FARM_Friend_TEST_NOTIFICATION_DESC"] = "Lanza una notificación de prueba."
+L["FARM_Friend_TOOLTIP_DESC"] = "Clic izquierdo para abrir la configuración."
+L["FARM_Friend_TOOLTIP_MODIFIER"] = "Alt + clic derecho en un objeto de la bolsa para seleccionarlo."
 L["FARM_Friend_TOTAL"] = "Total"
---Translation missing 
-L["FARM_Friend_TRACK_ITEM_PARAM_MISSING"] = "You have to set an Item Name or Item Link as second parameter."
---Translation missing 
-L["FARM_Friend_TRACKING_DESC"] = "You can track up to 12 items at once and select one item that is shown in the titan bar the other items are shown in the tooltip of Farm Buddy."
---Translation missing 
-L["FARM_Friend_VERSION"] = "Version"
---Translation missing 
-L["TITAN_FRIEND_NOTIFICATION_SOUND"] = "Notification Sound"
---Translation missing 
-L["TITAN_FARM_Friend_CANCEL"] = "Cancel"
---Translation missing 
-L["TITAN_FARM_Friend_CHOOSE_ITEM_INDEX"] = "Please enter the Position where you want to place the clicked item. (1 - %s)"
---Translation missing 
-L["TITAN_FARM_Friend_CONFIRM_ALL_RESET"] = "Are you sure you want to reset all settings to default values?"
---Translation missing 
-L["TITAN_FARM_Friend_CONFIRM_RESET"] = "Are you sure you want to reset all items?"
---Translation missing 
+L["FARM_Friend_TRACK_ITEM_PARAM_MISSING"] = "Debes ingresar un nombre o enlace de objeto como segundo parámetro."
+L["FARM_Friend_TRACKING_DESC"] = "Puedes observar hasta 12 objetos al mismo tiempo y seleccionar uno para mostrar en la barra de Titan. Los demás se muestran en el tooltip de Farm Friend."
+L["FARM_Friend_VERSION"] = "Versión"
+L["TITAN_FRIEND_NOTIFICATION_SOUND"] = "Sonido de notificación"
+L["TITAN_FARM_Friend_CANCEL"] = "Cancelar"
+L["TITAN_FARM_Friend_CHOOSE_ITEM_INDEX"] = "Ingresa la posición donde quieres colocar el objeto. (1 - %s)"
+L["TITAN_FARM_Friend_CONFIRM_ALL_RESET"] = "¿Seguro que deseas restablecer toda la configuración a los valores predeterminados?"
+L["TITAN_FARM_Friend_CONFIRM_RESET"] = "¿Seguro que deseas restablecer todos los objetos?"
 L["TITAN_FARM_Friend_NO"] = "No"
---Translation missing 
 L["TITAN_FARM_Friend_OK"] = "OK"
---Translation missing 
-L["TITAN_FARM_Friend_YES"] = "Yes"
+L["TITAN_FARM_Friend_YES"] = "Sí"

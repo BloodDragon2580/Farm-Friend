@@ -2,205 +2,108 @@ local L = LibStub('AceLocale-3.0'):NewLocale('Titan', 'zhTW', false)
 if not L then return end
 
 L = L or {}
---Translation missing 
-L["FARM_Friend_ABOUT"] = "About"
---Translation missing 
-L["FARM_Friend_ACTIONS"] = "Actions"
---Translation missing 
-L["FARM_Friend_ALERT_COUNT"] = "Quantity for Alert"
---Translation missing 
-L["FARM_Friend_ALERT_COUNT_USAGE"] = "An quantity for your farming goal."
---Translation missing 
-L["FARM_Friend_ANCHOR_HELP_TEXT"] = "Hold left mouse button to move. Right click to close."
---Translation missing 
-L["FARM_Friend_AUTHOR"] = "Author"
---Translation missing 
-L["FARM_Friend_BANK"] = "Bank"
---Translation missing 
-L["FARM_Friend_CHAT_COMMANDS"] = "Chat Commands"
---Translation missing 
-L["FARM_Friend_COMMAND_GOAL_ARGS"] = "Quantity"
---Translation missing 
-L["FARM_Friend_COMMAND_GOAL_DESC"] = "Sets the goal quantity."
---Translation missing 
-L["FARM_Friend_COMMAND_GOAL_PARAM_MISSING"] = "You have to set a quantity as second parameter."
---Translation missing 
-L["FARM_Friend_COMMAND_HELP_DESC"] = "Prints this information."
---Translation missing 
-L["FARM_Friend_COMMAND_LIST"] = "List of Chat Commands"
---Translation missing 
-L["FARM_Friend_COMMAND_PRIMARY_ARGS"] = "Position between 1 and !max!"
---Translation missing 
-L["FARM_Friend_COMMAND_PRIMARY_DESC"] = "Sets the items position that would be shown in the Titan Panel bar."
---Translation missing 
+L["FARM_Friend_ABOUT"] = "關於"
+L["FARM_Friend_ACTIONS"] = "操作"
+L["FARM_Friend_ALERT_COUNT"] = "警報數量"
+L["FARM_Friend_ALERT_COUNT_USAGE"] = "設定你的採集目標數量。"
+L["FARM_Friend_ANCHOR_HELP_TEXT"] = "按住滑鼠左鍵移動。右鍵點擊關閉。"
+L["FARM_Friend_AUTHOR"] = "作者"
+L["FARM_Friend_BANK"] = "銀行"
+L["FARM_Friend_CHAT_COMMANDS"] = "聊天命令"
+L["FARM_Friend_COMMAND_GOAL_ARGS"] = "數量"
+L["FARM_Friend_COMMAND_GOAL_DESC"] = "設定目標數量。"
+L["FARM_Friend_COMMAND_GOAL_PARAM_MISSING"] = "你必須設定數量作為第二個參數。"
+L["FARM_Friend_COMMAND_HELP_DESC"] = "顯示此資訊。"
+L["FARM_Friend_COMMAND_LIST"] = "聊天命令列表"
+L["FARM_Friend_COMMAND_PRIMARY_ARGS"] = "位置（1 到 !max!）"
+L["FARM_Friend_COMMAND_PRIMARY_DESC"] = "設定要在Titan面板欄中顯示的物品位置。"
 L["FARM_Friend_COMMAND_RESET_ARGS"] = "all | items"
---Translation missing 
-L["FARM_Friend_COMMAND_RESET_DESC"] = "Resets Farm Buddy to it's default settings."
---Translation missing 
-L["FARM_Friend_COMMAND_SETTINGS_DESC"] = "Open up the AddOn settings page."
---Translation missing 
-L["FARM_Friend_COMMAND_TRACK_ARGS"] = "Item Name|Item Link"
---Translation missing 
-L["FARM_Friend_COMMAND_TRACK_DESC"] = "Sets the tracked item."
---Translation missing 
-L["FARM_Friend_COMMAND_VERSION_DESC"] = "Show the current used Farm Buddy Version."
---Translation missing 
-L["FARM_Friend_CONFIG_RESET_MSG"] = "The configuration has been set back to the defaults."
---Translation missing 
-L["FARM_Friend_FAST_TRACKING_MOUSE_BUTTON"] = "Fast tracking mouse button"
---Translation missing 
-L["FARM_Friend_FAST_TRACKING_SHORTCUTS"] = "Fast tracking shortcuts"
---Translation missing 
-L["FARM_Friend_FAST_TRACKING_SHORTCUTS_DESC"] = "Combine your desired keys as a fast tracking shortcut. Fast tracking allows you to track an item from your inventory with these shortcut."
---Translation missing 
-L["FARM_Friend_GERMAN"] = "German"
---Translation missing 
-L["FARM_Friend_GOAL_SET"] = "The goal quantity has been set."
---Translation missing 
-L["FARM_Friend_INCLUDE_BANK"] = "Include items in your bank"
---Translation missing 
-L["FARM_Friend_INCLUDE_BANK_DESC"] = "If enabled items in your bank are included when counting the farmed item."
---Translation missing 
-L["FARM_Friend_INVALID_NUMBER"] = "The entered number is not a valid number."
---Translation missing 
-L["FARM_Friend_INVENTORY"] = "Inventory"
---Translation missing 
-L["FARM_Friend_ITEM"] = "Item"
---Translation missing 
-L["FARM_Friend_ITEM_DISPLAY_STYLE"] = "Item Display Style in Titan Bar"
---Translation missing 
-L["FARM_Friend_ITEM_DISPLAY_STYLE_1"] = "Only the primary Item"
---Translation missing 
-L["FARM_Friend_ITEM_DISPLAY_STYLE_2"] = "Show all Items"
---Translation missing 
-L["FARM_Friend_ITEM_DISPLAY_STYLE_DESC"] = "The item display style in the Titan Panel Bar."
---Translation missing 
-L["FARM_Friend_ITEM_NOT_EXISTS"] = "The item does not exists."
---Translation missing 
-L["FARM_Friend_ITEM_PRIMARY_SET_MSG"] = "The item on position !position! is now the primary item to display."
---Translation missing 
-L["FARM_Friend_ITEM_SET_MSG"] = "!itemName! is now your tracked item!"
---Translation missing 
-L["FARM_Friend_ITEM_SET_POSITION_MSG"] = "The entered position is not valid. Pleaser enter a position between 1 and max!."
---Translation missing 
-L["FARM_Friend_ITEM_TO_TRACK_DESC"] = "The name of the item to track"
---Translation missing 
-L["FARM_Friend_ITEM_TO_TRACK_USAGE"] = "Enter the name of an item or CTRL + Click an item from your inventory. Please note: The item have to be in your World of Warcraft Data Cache otherwise the item is not known to the AddOn API functions."
---Translation missing 
-L["FARM_Friend_ITEMS"] = "Items"
---Translation missing 
+L["FARM_Friend_COMMAND_RESET_DESC"] = "將Farm Friend重置為預設設定。"
+L["FARM_Friend_COMMAND_SETTINGS_DESC"] = "打開插件設定頁面。"
+L["FARM_Friend_COMMAND_TRACK_ARGS"] = "物品ID | 物品名稱 | 物品連結"
+L["FARM_Friend_COMMAND_TRACK_DESC"] = "設定要追蹤的物品。"
+L["FARM_Friend_COMMAND_VERSION_DESC"] = "顯示目前使用的Farm Friend版本。"
+L["FARM_Friend_CONFIG_RESET_MSG"] = "設定已重置為預設值。"
+L["FARM_Friend_FAST_TRACKING_MOUSE_BUTTON"] = "快速追蹤滑鼠按鍵"
+L["FARM_Friend_FAST_TRACKING_SHORTCUTS"] = "快速追蹤快捷鍵"
+L["FARM_Friend_FAST_TRACKING_SHORTCUTS_DESC"] = "組合你想要的按鍵作為快速追蹤快捷鍵。快速追蹤允許你用此快捷鍵從背包追蹤物品。"
+L["FARM_Friend_GERMAN"] = "德語"
+L["FARM_Friend_ENGLISH"] = "英文"
+L["FARM_Friend_RUSSIAN"] = "俄語"
+L["FARM_Friend_GOAL_SET"] = "目標數量已設定。"
+L["FARM_Friend_INCLUDE_BANK"] = "包含銀行中的物品"
+L["FARM_Friend_INCLUDE_BANK_DESC"] = "啟用後，銀行中的物品也會計入採集物品數量。"
+L["FARM_Friend_INVALID_NUMBER"] = "輸入的數字無效。"
+L["FARM_Friend_INVENTORY"] = "背包"
+L["FARM_Friend_ITEM"] = "物品"
+L["FARM_Friend_ITEM_DISPLAY_STYLE"] = "Titan欄物品顯示樣式"
+L["FARM_Friend_ITEM_DISPLAY_STYLE_1"] = "僅顯示主要物品"
+L["FARM_Friend_ITEM_DISPLAY_STYLE_2"] = "顯示所有物品"
+L["FARM_Friend_ITEM_DISPLAY_STYLE_DESC"] = "Titan面板欄中物品顯示樣式。"
+L["FARM_Friend_ITEM_NOT_EXISTS"] = "物品不存在。"
+L["FARM_Friend_ITEM_PRIMARY_SET_MSG"] = "位置 !position! 的物品現在為主要顯示物品。"
+L["FARM_Friend_ITEM_SET_MSG"] = "!itemName! 已成為你的追蹤物品！"
+L["FARM_Friend_ITEM_SET_POSITION_MSG"] = "輸入的位置無效。請輸入 1 到最大值之間的位置。"
+L["FARM_Friend_ITEM_TO_TRACK_DESC"] = "要追蹤的物品名稱"
+L["FARM_Friend_ITEM_TO_TRACK_USAGE"] = "輸入物品名稱或CTRL+點擊背包中的物品。請注意：物品必須在魔獸世界資料快取中，否則插件API無法識別。"
+L["FARM_Friend_ITEMS"] = "物品"
 L["FARM_Friend_KEY_ALT"] = "Alt"
---Translation missing 
 L["FARM_Friend_KEY_CTRL"] = "Ctrl"
---Translation missing 
-L["FARM_Friend_KEY_LEFT_MOUSE_BUTTON"] = "Left mouse button"
---Translation missing 
-L["FARM_Friend_KEY_RIGHT_MOUSE_BUTTON"] = "Right mouse button"
---Translation missing 
+L["FARM_Friend_KEY_LEFT_MOUSE_BUTTON"] = "滑鼠左鍵"
+L["FARM_Friend_KEY_RIGHT_MOUSE_BUTTON"] = "滑鼠右鍵"
 L["FARM_Friend_KEY_SHIFT"] = "Shift"
---Translation missing 
-L["FARM_Friend_LOCALIZATION"] = "Localization"
---Translation missing 
-L["FARM_Friend_MOVE_NOTIFICATION"] = "Change Notification Position"
---Translation missing 
-L["FARM_Friend_MOVE_NOTIFICATION_DESC"] = "Change the Position of the Notification Frame."
---Translation missing 
-L["FARM_Friend_NO_GOAL"] = "No goal defined"
---Translation missing 
-L["FARM_Friend_NO_ITEM_TRACKED"] = "You have no item for tracking selected."
---Translation missing 
-L["FARM_Friend_NOTIFICATION"] = "Enable Notifications"
---Translation missing 
-L["FARM_Friend_NOTIFICATION_DEMO_ITEM_NAME"] = "Hearthstone"
---Translation missing 
-L["FARM_Friend_NOTIFICATION_DESC"] = "Shows a notification if the item quantity has reached."
---Translation missing 
-L["FARM_Friend_NOTIFICATION_GLOW"] = "Show Glow Effect"
---Translation missing 
-L["FARM_Friend_NOTIFICATION_GLOW_DESC"] = "Shows a glow effect if a notification is shown."
---Translation missing 
-L["FARM_Friend_NOTIFICATION_SHINE"] = "Show Shine Effect"
---Translation missing 
-L["FARM_Friend_NOTIFICATION_SHINE_DESC"] = "Shows a shine effect if a notification is shown."
---Translation missing 
-L["FARM_Friend_NOTIFICATIONS"] = "Notifications"
---Translation missing 
-L["FARM_Friend_PLAY_NOTIFICATION_DISPLAY_DURATION"] = "Notification Display Duration"
---Translation missing 
-L["FARM_Friend_PLAY_NOTIFICATION_DISPLAY_DURATION_DESC"] = "The Notification Display Duration in seconds."
---Translation missing 
-L["FARM_Friend_PLAY_NOTIFICATION_SOUND"] = "Play Notification Sound"
---Translation missing 
-L["FARM_Friend_PLAY_NOTIFICATION_SOUND_DESC"] = "Play a notification sound file if the farm goal has reached."
---Translation missing 
-L["FARM_Friend_QUANTITY"] = "Quantity"
---Translation missing 
-L["FARM_Friend_RESET"] = "Reset"
---Translation missing 
-L["FARM_Friend_RESET_ALL"] = "Reset settings to default"
---Translation missing 
-L["FARM_Friend_RESET_ALL_DESC"] = "Reset all settings to default values."
---Translation missing 
-L["FARM_Friend_RESET_ALL_ITEMS"] = "Reset all tracked Items"
---Translation missing 
-L["FARM_Friend_RESET_ALL_ITEMS_DESC"] = "Resets all tracked items."
---Translation missing 
-L["FARM_Friend_RESET_DESC"] = "Resets the tracked item."
---Translation missing 
-L["FARM_Friend_SETTINGS"] = "Common"
---Translation missing 
-L["FARM_Friend_SHORTCUTS"] = "Shortcuts"
---Translation missing 
-L["FARM_Friend_SHOW_COLORED_TEXT"] = "Show Colored Text"
---Translation missing 
-L["FARM_Friend_SHOW_COLORED_TEXT_DESC"] = "Show the item count as colored text on the Titan Bar."
---Translation missing 
-L["FARM_Friend_SHOW_GOAL"] = "Show Goal on Titan Bar"
---Translation missing 
-L["FARM_Friend_SHOW_GOAL_DESC"] = "Show the goal quantity on the Titan Bar if a goal is defined."
---Translation missing 
-L["FARM_Friend_SHOW_ICON"] = "Show icon"
---Translation missing 
-L["FARM_Friend_SHOW_ICON_DESC"] = "Show the item icon on the Titan Bar."
---Translation missing 
-L["FARM_Friend_SHOW_IN_BAR"] = "Primary"
---Translation missing 
-L["FARM_Friend_SHOW_IN_BAR_DESC"] = "If this checkbox is enabled the items farm status will be shown on the Titan Panel bar."
---Translation missing 
-L["FARM_Friend_SHOW_NAME"] = "Show item name"
---Translation missing 
-L["FARM_Friend_SHOW_NAME_DESC"] = "Show the item name on the Titan Bar."
---Translation missing 
-L["FARM_Friend_SUMMARY"] = "Summary"
---Translation missing 
-L["FARM_Friend_TEST_NOTIFICATION"] = "Test Notification"
---Translation missing 
-L["FARM_Friend_TEST_NOTIFICATION_DESC"] = "Triggers a test for the finish notification."
---Translation missing 
-L["FARM_Friend_TOOLTIP_DESC"] = "Left click to open the Settings."
---Translation missing 
-L["FARM_Friend_TOOLTIP_MODIFIER"] = "Alt + Right click on an item in your Bag to set item."
---Translation missing 
-L["FARM_Friend_TOTAL"] = "Total"
---Translation missing 
-L["FARM_Friend_TRACK_ITEM_PARAM_MISSING"] = "You have to set an Item Name or Item Link as second parameter."
---Translation missing 
-L["FARM_Friend_TRACKING_DESC"] = "You can track up to 12 items at once and select one item that is shown in the titan bar the other items are shown in the tooltip of Farm Buddy."
---Translation missing 
-L["FARM_Friend_VERSION"] = "Version"
---Translation missing 
-L["TITAN_FRIEND_NOTIFICATION_SOUND"] = "Notification Sound"
---Translation missing 
-L["TITAN_FARM_Friend_CANCEL"] = "Cancel"
---Translation missing 
-L["TITAN_FARM_Friend_CHOOSE_ITEM_INDEX"] = "Please enter the Position where you want to place the clicked item. (1 - %s)"
---Translation missing 
-L["TITAN_FARM_Friend_CONFIRM_ALL_RESET"] = "Are you sure you want to reset all settings to default values?"
---Translation missing 
-L["TITAN_FARM_Friend_CONFIRM_RESET"] = "Are you sure you want to reset all items?"
---Translation missing 
-L["TITAN_FARM_Friend_NO"] = "No"
---Translation missing 
-L["TITAN_FARM_Friend_OK"] = "OK"
---Translation missing 
-L["TITAN_FARM_Friend_YES"] = "Yes"
+L["FARM_Friend_LOCALIZATION"] = "本地化"
+L["FARM_Friend_MOVE_NOTIFICATION"] = "更改通知位置"
+L["FARM_Friend_MOVE_NOTIFICATION_DESC"] = "更改通知框的位置。"
+L["FARM_Friend_NO_GOAL"] = "未定義目標"
+L["FARM_Friend_NO_ITEM_TRACKED"] = "未選擇追蹤物品。"
+L["FARM_Friend_NOTIFICATION"] = "啟用通知"
+L["FARM_Friend_NOTIFICATION_DEMO_ITEM_NAME"] = "爐石"
+L["FARM_Friend_NOTIFICATION_DESC"] = "當物品數量達到目標時顯示通知。"
+L["FARM_Friend_NOTIFICATION_GLOW"] = "顯示發光效果"
+L["FARM_Friend_NOTIFICATION_GLOW_DESC"] = "顯示通知時顯示發光效果。"
+L["FARM_Friend_NOTIFICATION_SHINE"] = "顯示閃光效果"
+L["FARM_Friend_NOTIFICATION_SHINE_DESC"] = "顯示通知時顯示閃光效果。"
+L["FARM_Friend_NOTIFICATIONS"] = "通知"
+L["FARM_Friend_PLAY_NOTIFICATION_DISPLAY_DURATION"] = "通知顯示時長"
+L["FARM_Friend_PLAY_NOTIFICATION_DISPLAY_DURATION_DESC"] = "通知顯示的秒數。"
+L["FARM_Friend_PLAY_NOTIFICATION_SOUND"] = "播放通知音效"
+L["FARM_Friend_PLAY_NOTIFICATION_SOUND_DESC"] = "達到採集目標時播放通知音效。"
+L["FARM_Friend_QUANTITY"] = "數量"
+L["FARM_Friend_RESET"] = "重置"
+L["FARM_Friend_RESET_ALL"] = "重置設定為預設值"
+L["FARM_Friend_RESET_ALL_DESC"] = "將所有設定重置為預設值。"
+L["FARM_Friend_RESET_ALL_ITEMS"] = "重置所有追蹤物品"
+L["FARM_Friend_RESET_ALL_ITEMS_DESC"] = "重置所有已追蹤物品。"
+L["FARM_Friend_RESET_DESC"] = "重置追蹤物品。"
+L["FARM_Friend_SETTINGS"] = "通用"
+L["FARM_Friend_SHORTCUTS"] = "快捷鍵"
+L["FARM_Friend_SHOW_COLORED_TEXT"] = "顯示彩色文字"
+L["FARM_Friend_SHOW_COLORED_TEXT_DESC"] = "在Titan欄顯示彩色物品數量。"
+L["FARM_Friend_SHOW_GOAL"] = "在Titan欄顯示目標"
+L["FARM_Friend_SHOW_GOAL_DESC"] = "如果定義了目標，在Titan欄顯示目標數量。"
+L["FARM_Friend_SHOW_ICON"] = "顯示圖示"
+L["FARM_Friend_SHOW_ICON_DESC"] = "在Titan欄顯示物品圖示。"
+L["FARM_Friend_SHOW_IN_BAR"] = "主要顯示"
+L["FARM_Friend_SHOW_IN_BAR_DESC"] = "啟用後，物品採集狀態顯示在Titan面板欄。"
+L["FARM_Friend_SHOW_NAME"] = "顯示物品名稱"
+L["FARM_Friend_SHOW_NAME_DESC"] = "在Titan欄顯示物品名稱。"
+L["FARM_Friend_SUMMARY"] = "摘要"
+L["FARM_Friend_SUPPORT"] = "支援"
+L["FARM_Friend_SUPPORT_TEXT"] = "FARM_Friend 支援"
+L["FARM_Friend_TEST_NOTIFICATION"] = "測試通知"
+L["FARM_Friend_TEST_NOTIFICATION_DESC"] = "觸發完成通知測試。"
+L["FARM_Friend_TOOLTIP_DESC"] = "左鍵點擊打開設定。"
+L["FARM_Friend_TOOLTIP_MODIFIER"] = "Alt + 右鍵點擊背包中的物品以設定物品。"
+L["FARM_Friend_TOTAL"] = "總計"
+L["FARM_Friend_TRACK_ITEM_PARAM_MISSING"] = "你必須設定物品名稱或連結作為第二參數。"
+L["FARM_Friend_TRACKING_DESC"] = "你可以同時追蹤最多4個物品，並選擇其中一個顯示在Titan欄，其他物品顯示在Farm Friend工具提示中。"
+L["FARM_Friend_VERSION"] = "版本"
+L["TITAN_FRIEND_NOTIFICATION_SOUND"] = "通知音效"
+L["TITAN_FARM_Friend_CANCEL"] = "取消"
+L["TITAN_FARM_Friend_CHOOSE_ITEM_INDEX"] = "請輸入要放置已點擊物品的位置。(1 - %s)"
+L["TITAN_FARM_Friend_CONFIRM_ALL_RESET"] = "確定要將所有設定重置為預設值嗎？"
+L["TITAN_FARM_Friend_CONFIRM_RESET"] = "確定要重置所有物品嗎？"
+L["TITAN_FARM_Friend_NO"] = "否"
+L["TITAN_FARM_Friend_OK"] = "確定"
+L["TITAN_FARM_Friend_YES"] = "是"

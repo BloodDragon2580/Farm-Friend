@@ -252,6 +252,58 @@ end
 -- NAME : TitanFarmFriend:GetConfigOption()
 -- DESC : Gets the configuration array for the AceConfig lib.
 -- **************************************************************************
+function TitanFarmFriend_SetItemIndexOnShow(self)
+
+  -- Get first position without an item as preferred default value
+  local defaultIndex = 1;
+  for i = 1, ITEMS_AVAILABLE do
+    if TitanGetVar(TITAN_FARM_Friend_ID, 'Item' .. tostring(i)) == '' then
+      defaultIndex = i;
+      break;
+    end
+  end
+
+  -- Set default value for dialog edit box
+  getglobal(self:GetName() .. 'EditBox'):SetText(tostring(defaultIndex));
+end
+
+-- **************************************************************************
+-- NAME : TitanFarmFriend_SetItemIndexOnAccept()
+-- DESC : Callback function for the SetItemIndex OnAccept event.
+-- **************************************************************************
+function TitanFarmFriend_SetItemIndexOnAccept(self, data)
+  local index = tonumber(getglobal(self:GetName() .. 'EditBox'):GetText());
+  if TitanFarmFriend:IsIndexValid(index) == true then
+    local text = L['FARM_Friend_ITEM_SET_MSG']:gsub('!itemName!', data);
+    TitanFarmFriend:SetItem(index, nil, data);
+    TitanFarmFriend:Print(text);
+    LibStub('AceConfigRegistry-3.0'):NotifyChange(ADDON_NAME);
+  else
+    local text = L['FARM_Friend_ITEM_SET_POSITION_MSG']:gsub('!max!', ITEMS_AVAILABLE);
+    TitanFarmFriend:Print(text);
+  end
+end
+
+-- **************************************************************************
+-- NAME : TitanFarmFriend_GetID()
+-- DESC : Gets the Titan Plugin ID.
+-- **************************************************************************
+function TitanFarmFriend_GetID()
+  return TITAN_FARM_Friend_ID;
+end
+
+-- **************************************************************************
+-- NAME : TitanFarmFriend_GetAddOnName()
+-- DESC : Gets the Titan Plugin AdOn name.
+-- **************************************************************************
+function TitanFarmFriend_GetAddOnName()
+  return ADDON_NAME;
+end
+
+-- **************************************************************************
+-- NAME : TitanFarmFriend:GetConfigOption()
+-- DESC : Gets the configuration array for the AceConfig lib.
+-- **************************************************************************
 function TitanFarmFriend:GetConfigOption()
 	return {
 		name = ADDON_NAME,
@@ -748,9 +800,48 @@ function TitanFarmFriend:GetConfigOption()
             order = TitanFarmFriend:GetOptionOrder('about'),
             width = 'full',
           },
-          about_info_localization_supporters = {
+          about_info_localization_supporters_deDE = {
             type = 'description',
             name = '   • BloodDragon2580\n\n\n',
+            order = TitanFarmFriend:GetOptionOrder('about'),
+            width = 'full',
+          },
+          about_info_localization_enUS = {
+            type = 'description',
+            fontSize = 'small',
+            name = TitanUtils_GetGreenText(L['FARM_Friend_ENGLISH']) .. '\n',
+            order = TitanFarmFriend:GetOptionOrder('about'),
+            width = 'full',
+          },
+          about_info_localization_supporters_enUS = {
+            type = 'description',
+            name = '   • Keldor\n\n\n',
+            order = TitanFarmFriend:GetOptionOrder('about'),
+            width = 'full',
+          },
+          about_info_localization_ruRU = {
+            type = 'description',
+            fontSize = 'small',
+            name = TitanUtils_GetGreenText(L['FARM_Friend_RUSSIAN']) .. '\n',
+            order = TitanFarmFriend:GetOptionOrder('about'),
+            width = 'full',
+          },
+          about_info_localization_supporters_ruRU = {
+            type = 'description',
+            name = '   • ZamestoTV\n\n\n',
+            order = TitanFarmFriend:GetOptionOrder('about'),
+            width = 'full',
+          },
+          about_info_support_title = {
+            type = 'description',
+            fontSize = 'medium',
+            name = TitanUtils_GetGoldText(L['FARM_Friend_SUPPORT']) .. '\n',
+            order = TitanFarmFriend:GetOptionOrder('about'),
+            width = 'full',
+          },
+          about_info_support_text = {
+            type = 'description',
+            name = '   • ' .. L['FARM_Friend_SUPPORT_TEXT'] .. '\n\n\n',
             order = TitanFarmFriend:GetOptionOrder('about'),
             width = 'full',
           },
@@ -1887,7 +1978,7 @@ function TitanFarmFriend:ChatCommand(input)
   elseif cmd == 'track' then
 
     if value ~= nil then
-      print(TitanFarmBuddy_GetItemInfo(arg1))
+      print(TitanFarmFriend_GetItemInfo(arg1))
       local itemInfo = TitanFarmFriend_GetItemInfo(arg1);
       if itemInfo ~= nil then
         local index = tonumber(value);
