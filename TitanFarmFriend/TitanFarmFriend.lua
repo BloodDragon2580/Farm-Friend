@@ -39,6 +39,7 @@ local CHAT_COMMANDS = {
     Description = L['FARM_Friend_COMMAND_HELP_DESC']
   }
 };
+local ADDON_SETTING_PANEL;
 
 -- **************************************************************************
 -- NAME : TitanFarmFriend:OnInitialize()
@@ -46,7 +47,8 @@ local CHAT_COMMANDS = {
 -- **************************************************************************
 function TitanFarmFriend:OnInitialize()
   LibStub('AceConfig-3.0'):RegisterOptionsTable(ADDON_NAME, TitanFarmFriend:GetConfigOption());
-  LibStub('AceConfigDialog-3.0'):AddToBlizOptions(ADDON_NAME);
+  local _, category = LibStub('AceConfigDialog-3.0'):AddToBlizOptions(ADDON_NAME);
+  ADDON_SETTING_PANEL = category;
 
   self:RegisterDialogs();
 
@@ -1063,7 +1065,7 @@ end
 -- **************************************************************************
 function TitanFarmFriend_OnClick(self, button)
 	if (button == 'LeftButton') then
-		Settings.OpenToCategory(ADDON_NAME);
+    Settings.OpenToCategory(ADDON_SETTING_PANEL);
  	end
 end
 
@@ -1997,7 +1999,7 @@ function TitanFarmFriend:ChatCommand(input)
       TitanFarmFriend:Print(L['FARM_Friend_TRACK_ITEM_PARAM_MISSING']);
     end
   elseif cmd == 'settings' then
-    Settings.OpenToCategory(ADDON_NAME);
+    Settings.OpenToCategory(ADDON_SETTING_PANEL);
   end
 end
 
